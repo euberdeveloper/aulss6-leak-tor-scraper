@@ -19,12 +19,13 @@ async function main() {
     else {
         logger.info('Using Tor. Continuing... ');
 
-        // Now you can go wherever you want
-        // await page.goto('https://propub3r6espa33w.onion/');
+        await page.goto('http://lockbitapt6vx57t3eeqjofwgcglmutr3a35nygvokja5uuccip4ykyd.onion/post/kmhWMR1nQDm7vn6Q61d085f0902a9');
 
-        // You would add additional code to do stuff... 
+        const titleSelector = 'div.post-big-title';
+        await page.waitForSelector(titleSelector);
 
-        // Then when you're done, just close
+        const title = await page.$eval(titleSelector, (el: any) => el.innerText);
+        logger.success(title);
     }
     await browser.close();
 }
