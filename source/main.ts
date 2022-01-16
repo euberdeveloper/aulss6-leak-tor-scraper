@@ -25,7 +25,7 @@ async function main() {
         // You would add additional code to do stuff... 
 
         // Then when you're done, just close
-        await browser.close();
     }
+    await browser.close();
 }
 main();
